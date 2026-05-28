@@ -17,5 +17,16 @@ class Product
   def find_product(id)
     @@products.find { |p| p.id == id}
   end
+
+  def self.display_product_details
+    puts "----Products Details----"
+    @@products.each do |product|
+      puts "Name : #{product.name}"
+      puts "ID: #{product.id}"
+      puts "Price: #{product.price}"
+      puts "Quantity: #{product.quantity}"
+      puts "-------------------------------"
+    end
+  end
 end
 
