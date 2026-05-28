@@ -34,6 +34,15 @@ module InventoryManager
       raise "Product Not Found"
     end
   end
+
+  def check_stock_status
+    product = find_product(id)
+    if product.quantity > 0
+      puts "#{product.name} is in stock"
+    else
+      puts "#{product.name} out of stock"
+    end
+  end
 end
 
   
