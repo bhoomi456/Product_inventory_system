@@ -1,4 +1,6 @@
+require_relative "inventory_manager"
 class Product
+  include InventoryManager
   @@products = []
   attr_accessor :name, :id, :price, :quantity
   def initialize(name, id, price, quantity)
@@ -15,10 +17,10 @@ class Product
 
   def find_product(id)
     @@products.find { |p| p.id == id}
-    puts "product #{@id}"
   end
 end
 
 p1 = Product.new("mouse", 101, 4000, 20)
 p1.add_product
 p1.find_product(101)
+p1.add_stock(101, 10)
