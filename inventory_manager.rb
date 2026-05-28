@@ -1,11 +1,12 @@
 module InventoryManager
   def add_stock(id, quantity)
     product = find_product(id)
+
     if product
 
       if quantity > 0
       product.quantity += quantity
-      puts "Stock Added with quantity ; #{quantity}"
+      puts "Updated Stock: #{product.quantity}(#{product.name})"
       else
         raise "Invalid Quantity"
       end
@@ -14,4 +15,25 @@ module InventoryManager
       puts "Product Not Found"
     end
   end
+
+  def remove_stock(id, quantity)
+    product = find_product(id)
+
+    if product
+
+      if quantity < 0
+        raise "Invalid Quantity"
+      elsif quantity <= product.quantity
+        product.quantity -= quantity
+        puts "Updated Stock : #{product.quantity}(#{product.name})"
+      else
+        raise "Out Of Stock"
+      end
+
+    else
+      raise "Product Not Found"
+    end
+  end
 end
+
+  

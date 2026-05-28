@@ -1,4 +1,3 @@
-require_relative "inventory_manager"
 class Product
   include InventoryManager
   @@products = []
@@ -20,7 +19,3 @@ class Product
   end
 end
 
-p1 = Product.new("mouse", 101, 4000, 20)
-p1.add_product
-p1.find_product(101)
-p1.add_stock(101, 10)
