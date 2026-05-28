@@ -1,7 +1,10 @@
 class Product
   include InventoryManager
+
   @@products = []
+
   attr_accessor :name, :id, :price, :quantity
+  
   def initialize(name, id, price, quantity)
     @name = name
     @id = id
