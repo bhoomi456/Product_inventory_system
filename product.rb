@@ -11,6 +11,7 @@ class Product
 
   def add_product
     @@products << self
+    puts "Product Added Successfully"
     puts "NAME: #{@name}, ID: #{@id}, PRICE: #{@price}, QUANTITY: #{@quantity}"
   end
 
