@@ -9,7 +9,7 @@ p2.add_product
 
 p1.add_stock(101, 10)
 
-p1.remove_stock(101, 30)
+# p1.remove_stock(101, 30)
 
 Product.display_product_details
 
