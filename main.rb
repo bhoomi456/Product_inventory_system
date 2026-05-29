@@ -1,18 +1,37 @@
 require_relative "inventory_manager"
+require_relative "inventory"
 require_relative "product"
 
 p1 = Product.new("mouse", 101, 4000, 20)
 p2 = Product.new("keyboard", 102, 2000, 5)
-p1.add_product
 
-p2.add_product
 
-p1.add_stock(101, 10)
 
-# p1.remove_stock(101, 30)
+inventory = Inventory.new
+inventory.add_product(p1)
+puts "------------------------"
+inventory.add_product(p2)
+puts "------------------------"
 
-Product.display_product_details
 
-p1.check_stock_status
+inventory.add_stock(101, 10)
+puts "------------------------"
+inventory.add_stock(102, 10)
 
-p2.check_stock_status
+
+
+inventory.display_product_details
+
+inventory.remove_stock(101, 20)
+puts "------------------------"
+
+inventory.display_product_details
+
+
+inventory.check_stock_status(101)
+puts "------------------------"
+
+
+inventory.check_stock_status(102)
+
+
